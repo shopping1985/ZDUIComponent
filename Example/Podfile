@@ -1,6 +1,7 @@
 use_frameworks!
+source 'https://github.com/shopping1985/ZDSpec.git'
 
-platform :ios, '8.0'
+platform :ios, '10.0'
 
 target 'ZDUIComponent_Example' do
   pod 'ZDUIComponent', :path => '../'

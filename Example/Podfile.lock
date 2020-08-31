@@ -1,0 +1,28 @@
+PODS:
+  - lottie-ios (2.5.3)
+  - ZDUIComponent (0.1.0):
+    - lottie-ios (= 2.5.3)
+    - ZDUtilComponent
+  - ZDUtilComponent (1.0.1)
+
+DEPENDENCIES:
+  - ZDUIComponent (from `../`)
+
+SPEC REPOS:
+  https://github.com/shopping1985/ZDSpec.git:
+    - ZDUtilComponent
+  trunk:
+    - lottie-ios
+
+EXTERNAL SOURCES:
+  ZDUIComponent:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
+  ZDUIComponent: e6580b93098893b9c5fa41462ee82deea8ad19aa
+  ZDUtilComponent: a32f090c5b59310a530c5bee0f5027c5f782f2d4
+
+PODFILE CHECKSUM: 0eee6d79db62fbfffbf517920a3847db8d6c6808
+
+COCOAPODS: 1.9.1

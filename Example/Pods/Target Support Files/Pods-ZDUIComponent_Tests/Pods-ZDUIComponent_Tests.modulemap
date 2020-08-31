@@ -1,0 +1,6 @@
+framework module Pods_ZDUIComponent_Tests {
+  umbrella header "Pods-ZDUIComponent_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
