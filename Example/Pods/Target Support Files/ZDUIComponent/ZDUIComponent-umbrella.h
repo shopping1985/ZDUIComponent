@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "ZDUIComponent.h"
 #import "BaseCollectionCell.h"
 #import "BaseCollectionView.h"
 #import "BaseNestTableView.h"

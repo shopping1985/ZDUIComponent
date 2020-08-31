@@ -1,6 +1,5 @@
-use_frameworks!
 source 'https://github.com/shopping1985/ZDSpec.git'
-
+use_frameworks!
 platform :ios, '10.0'
 
 target 'ZDUIComponent_Example' do

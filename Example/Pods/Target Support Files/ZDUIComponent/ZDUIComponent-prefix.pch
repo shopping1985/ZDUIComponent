@@ -10,3 +10,5 @@
 #endif
 #endif
 
+#import <ZDUtilComponent/ZDUtilsComponent.h>
+#define ZDUIC_Bundle [NSBundle wg_subBundleWithBundleName:@"ZDUIComponent" targetClass:[self class]]

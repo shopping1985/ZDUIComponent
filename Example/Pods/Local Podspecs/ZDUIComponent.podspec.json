@@ -18,7 +18,8 @@
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "ZDUIComponent/Classes/**/*",
+  "source_files": "ZDUIComponent/Classes/*",
+  "public_header_files": "ZDUIComponent/Classes/*.h",
   "resource_bundles": {
     "ZDUIComponent": [
       "ZDUIComponent/Assets/*"
@@ -31,5 +32,28 @@
     "ZDUtilComponent": [
 
     ]
-  }
+  },
+  "prefix_header_contents": [
+    "#import <ZDUtilComponent/ZDUtilsComponent.h>",
+    "#define ZDUIC_Bundle [NSBundle wg_subBundleWithBundleName:@\"ZDUIComponent\" targetClass:[self class]]"
+  ],
+  "subspecs": [
+    {
+      "name": "common-view",
+      "source_files": "ZDUIComponent/Classes/common/view/*"
+    },
+    {
+      "name": "base-view",
+      "source_files": "ZDUIComponent/Classes/base/view/*"
+    },
+    {
+      "name": "base-viewcontroller",
+      "dependencies": {
+        "ZDUIComponent/common-view": [
+
+        ]
+      },
+      "source_files": "ZDUIComponent/Classes/base/viewcontroller/*"
+    }
+  ]
 }

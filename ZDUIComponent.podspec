@@ -28,15 +28,32 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/shopping1985/ZDUIComponent.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
-  s.source_files = 'ZDUIComponent/Classes/**/*'
+  s.source_files = 'ZDUIComponent/Classes/*'
+  s.public_header_files = 'ZDUIComponent/Classes/*.h'
+  #--文件分层--#
+  s.subspec 'common-view' do |ss|
+      ss.source_files = 'ZDUIComponent/Classes/common/view/*'
+  end
+  s.subspec 'base-view' do |ss|
+      ss.source_files = 'ZDUIComponent/Classes/base/view/*'
+  end
+  s.subspec 'base-viewcontroller' do |ss|
+      ss.dependency 'ZDUIComponent/common-view'
+      ss.source_files = 'ZDUIComponent/Classes/base/viewcontroller/*'
+  end
   
-  # s.resource_bundles = {
-  #   'ZDUIComponent' => ['ZDUIComponent/Assets/*.png']
-  # }
+   s.resource_bundles = {
+     'ZDUIComponent' => ['ZDUIComponent/Assets/*']
+   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'lottie-ios' ,'2.5.3'
+  s.dependency 'ZDUtilComponent'
+  
+  #--预编译头内容需执行pod install后才生成到ZDUIComponent-prefix.pch
+  s.prefix_header_contents = '#import <ZDUtilComponent/ZDUtilsComponent.h>','#define ZDUIC_Bundle [NSBundle wg_subBundleWithBundleName:@"ZDUIComponent" targetClass:[self class]]'
+
 end
